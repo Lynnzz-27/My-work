@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY FAVORITE GAMBAR PICTURE GW</title>
+</head>
+<body>
+    <center>
+    <header>
+        <h1>MY FAVORITE GAMBAR PICTURE GW</h1>
+        <hr>
+    </header>
+    <main>
+        <section>
+            <p>Berikut adalah gambar favorite saya</p>
+            <img src="https://i.pinimg.com/736x/2c/31/67/2c31672b0a30cec450773c273e24b145.jpg">
+            <p>Lukisan Jepang ini menampilkan pemandangan alam yang tenang dengan gaya tinta hitam-putih, memperlihatkan sebuah bangunan tradisional Jepang yang berdiri di tepi air dalam suasana berkabut, dikelilingi pepohonan dan latar alam yang dibuat samar. Aksen warna merah pada daun sakura menjadi satu-satunya warna mencolok yang memberi fokus visual tanpa membuat gambar terlihat ramai. Komposisi lukisan yang sederhana, ruang kosong yang luas, serta goresan tinta yang halus menciptakan kesan seimbang, minimalis, dan menenangkan, sehingga gambar ini terasa enak dipandang dan tidak berlebihan.</p>
+        </section>
+        
+    </main>
+    </center>
+    <div id="videoContainer" style="position:fixed; bottom:20px; right:20px; z-index:9999;">
+    
+    <video controls loop playsinline 
+        width="320" height="180"
+        style="border-radius:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.5); display:block;">
+        <source src="Bahan gambar/Hindia.mp4" type="video/mp4">
+    </video>
+
+    <button onclick="closeVideo()" 
+        style="
+        position:absolute; 
+        top:6px; 
+        right:6px;
+        background:rgba(0,0,0,0.6); 
+        color:white; 
+        border:none; 
+        border-radius:50%; 
+        width:18px; 
+        height:18px; 
+        font-size:12px; 
+        cursor:pointer;
+        z-index:10000;">
+        ×
+    </button>
+
+</div>
+
+<script>
+function closeVideo() {
+    const container = document.getElementById("videoContainer");
+    const video = container.querySelector("video");
+
+    video.pause();     
+    video.currentTime = 0;
+    container.style.display = "none";
+}
+</script>
+
+</body>
+</html>

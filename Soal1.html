@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kelulusan</title>
+    <link rel="stylesheet" href="Soa1.css">
+</head>
+<body>
+
+    <h3>Program Penentu Kelulusan</h3>
+    
+    <label for="inputNilai">Masukkan Nilai: </label>
+    <input type="number" id="inputNilai" placeholder="Contoh: 80">
+    <button onclick="cekKelulusan()">Cek Status</button>
+
+    <div id="tempatHasil" class="hasil"></div>
+
+    <script>
+        function cekKelulusan() {
+            let nilai = document.getElementById("inputNilai").value;
+            let elemenHasil = document.getElementById("tempatHasil");
+
+            if (nilai === "") {
+                elemenHasil.innerHTML = "Harap masukkan nilai terlebih dahulu!";
+                elemenHasil.className = "hasil";
+                return;
+            }
+
+            if (nilai >= 75) {
+                elemenHasil.innerHTML = "Nilai kamu " + nilai + " - Status: LULUS";
+                elemenHasil.className = "hasil lulus";
+            } else {
+                elemenHasil.innerHTML = "Nilai kamu " + nilai + " - Status: TIDAK LULUS";
+                elemenHasil.className = "hasil tidak-lulus";
+            }
+        }
+    </script>
+
+</body>
+</html>

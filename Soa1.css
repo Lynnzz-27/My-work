@@ -1,0 +1,4 @@
+ body { font-family: sans-serif; margin: 20px; }
+        .hasil { font-weight: bold; margin-top: 15px; }
+        .lulus { color: green; }
+        .tidak-lulus { color: red; }

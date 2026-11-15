@@ -1,0 +1,341 @@
+/* Reset dan Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('Bahan\ gambar/bg\ \hitam.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header dan Navigasi */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #555;
+    width: 100%;
+}
+
+.menu {
+    cursor: pointer;
+}
+
+.menu div {
+    height: 100%;
+    width: 180px;
+    position: absolute;
+    background-color: black;
+    transition: 0.5s ease;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    color: #ccc;
+    padding: 10px;
+    font-weight: 500;
+    padding: 5px 0;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2 ease;
+}
+
+ul li a i {
+    width: 40px;
+    text-align: center;
+}
+
+.hamburger-menu input {
+    display: none;
+    visibility: hidden;
+}
+
+.toggle {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 15px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.toggle .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 50px;
+    transition: 0.3 ease;
+}
+
+.toggle .top_line {
+    top: 30%;
+    left: 50%;
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+.search-bar form {
+    display: flex;
+    border: 1px solid #777;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 8px 15px;
+    color: white;
+    outline: none;
+}
+
+.search-bar button {
+    border: none;
+    background: transparent;
+    color: #777;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+/* Konten Utama (Main) */
+main#home-main {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    /* Menggunakan 'display: contents' agar anak-anaknya bisa di-posisikan */
+    display: contents;
+}
+
+.brand-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.brand-logo h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #ccc;
+}
+
+.brand-logo p {
+    font-size: 1rem;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+/* Kartu Produk */
+.product-card {
+    position: absolute;
+    z-index: 2;
+    /* Agar di atas logo */
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.product-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Posisi Spesifik untuk setiap produk */
+#sotb {
+    background-color: #D98C5F;
+    top: 45%;
+    left: 15%;
+    transform: translateY(-50%);
+}
+
+#black-opera {
+    background-color: #6D564B;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#loui {
+    background-color: #AF6A7E;
+    top: 45%;
+    right: 15%;
+    transform: translateY(-50%);
+}
+
+
+/* Footer */
+footer {
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    bottom: 20px;
+    border-top: 1px solid #555;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Styling untuk halaman detail produk (Tambahan) */
+.detail-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    /* Jarak antara gambar dan teks */
+    max-width: 900px;
+    /* Batasi lebar konten detail */
+    margin: auto;
+    /* Pusatkan konten */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Background samar untuk area detail */
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 2;
+    /* Pastikan di atas logo brand */
+    position: relative;
+    /* Penting untuk z-index */
+}
+
+.detail-image-container {
+    flex-shrink: 0;
+    /* Jangan biarkan gambar mengecil */
+    text-align: center;
+}
+
+.detail-image-container img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.detail-info {
+    flex-grow: 1;
+    /* Biarkan info memenuhi sisa ruang */
+    text-align: left;
+}
+
+.detail-info h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.detail-info .product-price {
+    font-size: 1.5rem;
+    color: #D98C5F;
+    /* Warna harga yang menonjol */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.detail-info p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+.detail-info .back-link {
+    display: inline-block;
+    /* Agar bisa diberi padding/margin */
+    font-size: 1.1rem;
+    color: #D98C5F;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.detail-info .back-link:hover {
+    color: white;
+}
+
+/* Modifikasi untuk brand-logo di halaman detail */
+body.detail-page .brand-logo {
+    opacity: 0.1;
+    /* Buat logo transparan di halaman detail */
+    font-size: 10rem;
+    /* Sesuaikan ukuran logo jika perlu */
+    pointer-events: none;
+    /* Agar tidak mengganggu klik di belakangnya */
+}
+
+/* Mengatur ulang main untuk halaman detail */
+body.detail-page main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    /* Vertikal center */
+    justify-content: center;
+    /* Horizontal center */
+    position: relative;
+    /* Untuk menempatkan brand-logo dan konten detail */
+    padding: 2rem;
+}

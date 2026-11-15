@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawaban Soal Praktik JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        .kotak-hasil { background-color: #f4f4f4; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <h2>Jawaban Soal 1</h2>
+    <div id="hasil-soal-1" class="kotak-hasil"></div>
+
+    <script>
+        const dataAngka = "25.75"; 
+
+        const angkaBulat = parseInt(dataAngka);
+        const angkaDesimal = parseFloat(dataAngka);
+
+        
+        const outputSoal1 = `
+            <strong>Nilai awal (String):</strong> "${dataAngka}" <br>
+            <strong>Hasil parseInt (Bilangan Bulat):</strong> ${angkaBulat} <br>
+            <strong>Hasil parseFloat (Bilangan Desimal):</strong> ${angkaDesimal}
+        `;
+        document.getElementById("hasil-soal-1").innerHTML = outputSoal1;
+
+
+    </script>
+
+</body>
+</html>
