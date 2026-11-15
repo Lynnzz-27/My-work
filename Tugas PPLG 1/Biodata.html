@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Biodata</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f2f5;
+    }
+
+    .card-biodata {
+        background-color: #ffff;
+        border: 2px solid #333;
+        border-radius: 20px;
+        padding: 30px;
+        width: 450px;
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 1);
+    }
+
+    .header-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        background-color: #e9ecef;
+        margin-right: 20px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .nickname-container h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+        border-bottom: 2px;
+    }
+
+    .details-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .details-table td {
+        padding: 8px 0px;
+        font-size: 12px;
+        color: #444;
+        vertical-align: top;
+    }
+
+    .details-table td:nth-child(1) {
+        width: 140px;
+        font-weight: 500;
+    }
+
+    .details-table td:nth-child(2) {
+        width: 30px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .details-table td:nth-child(3) {
+        font-weight: 400;
+    }
+</style>
+<body>
+    <div class="card-biodata">
+        <div class="header-section">
+            <div class="profile-pic">
+                <img src="WhatsApp Image 2026-04-17 at 6.52.03 AM.jpeg">
+            </div>
+            <div class="nickname-container">
+                <h2><u>Bimbim/Berlyn</u></h2>
+            </div>
+        </div>
+        <table class="details-table">
+            <tr>
+                <td>Nama Lengkap</td>
+                <td>:</td>
+                <td>Berlyn Abimanyu Wibowo</td>
+            </tr>
+            <tr>
+                <td>Kelas</td>
+                <td>:</td>
+                <td>X-RPL 2</td>
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td>:</td>
+                <td>Basket & Bermain Video Game</td>
+            </tr>
+            <tr>
+                <td>Motto</td>
+                <td>:</td>
+                <td>Improve Yourself Every Day</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

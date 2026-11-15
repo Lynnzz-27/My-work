@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexabyte - Website & App Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <button id="hamburger-btn" class="icon-btn"><i class="fas fa-bars"></i></button>
+            <h1 class="logo" onclick="showSection('home')">Nexabyte</h1>
+        </div>
+        
+        <ul class="nav-center">
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('about')">About</a></li>
+            <li><a href="#" onclick="showSection('services')">Services</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <i class="fas fa-shopping-cart icon-action" onclick="showSection('order-details')" style="cursor: pointer;"></i>
+            <div class="hearts">
+                <i class="fas fa-heart icon-action"></i>
+                <i class="far fa-heart icon-action"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sidebar" class="sidebar">
+        <button id="close-sidebar" class="close-btn">&times;</button>
+        <h3>Menu Pengguna</h3>
+        <ul>
+            <li onclick="showSection('login')"><i class="fas fa-sign-in-alt"></i> Login</li>
+            <li onclick="showSection('process')"><i class="fas fa-tasks"></i> Perkembangan Proses</li>
+            <li onclick="showSection('order-details')"><i class="fas fa-file-invoice"></i> Detail Pemesanan</li>
+        </ul>
+    </div>
+
+    <main class="container">
+
+        <section id="home" class="section active">
+            <div class="hero-text">
+                <h2>Website And App Solutions</h2>
+                <p>We provide high-quality website and App development services</p>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="icon-box"><i class="fas fa-desktop"></i></div>
+                    <h3>Website<br>Development</h3>
+                </div>
+                <div class="card">
+                    <div class="icon-box"><i class="fab fa-android"></i></div>
+                    <h3>Mobile Apps</h3>
+                </div>
+            </div>
+            <div class="action-btn-container">
+                <button class="btn-primary" onclick="showSection('order-page')">Get Started</button>
+                <div class="hearts-bottom"><i class="far fa-heart"></i> <i class="fas fa-heart"></i></div>
+            </div>
+        </section>
+
+        <section id="order-page" class="section">
+            <div class="form-box">
+                <h2>Form Pemesanan</h2>
+                <form id="orderForm">
+                    <div class="input-group">
+                        <label>Nama Anda</label>
+                        <input type="text" id="custName" required placeholder="Nama lengkap">
+                    </div>
+                    <div class="input-group">
+                        <label>Pilih Layanan</label>
+                        <select id="serviceType" class="select-style">
+                            <option value="Website Development">Website Development</option>
+                            <option value="Mobile Apps">Mobile Apps</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Metode Pembayaran</label>
+                        <select id="paymentMethod" class="select-style">
+                            <option value="Transfer Bank (BCA/Mandiri)">Transfer Bank (BCA/Mandiri)</option>
+                            <option value="E-Wallet (Dana/OVO)">E-Wallet (Dana/OVO)</option>
+                            <option value="Kartu Kredit">Kartu Kredit</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Kirim Pesanan</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="login" class="section">
+            <div class="form-box">
+                <h2>Login Member</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" required placeholder="email@gmail.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPass" required placeholder="******">
+                    </div>
+                    <button type="submit" class="btn-primary">Masuk</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="order-details" class="section">
+            <h2>Detail Pemesanan</h2>
+            <div class="order-card">
+                <table id="orderTable">
+                    <tr><th>Nama Pemesan</th><td id="viewName">-</td></tr>
+                    <tr><th>Layanan</th><td id="viewService">-</td></tr>
+                    <tr><th>Pembayaran</th><td id="viewPayment">-</td></tr>
+                    <tr><th>Tanggal</th><td id="viewDate">-</td></tr>
+                    <tr><th>Status</th><td id="viewStatus"><span class="badge-success">Diterima</span></td></tr>
+                    <tr id="cancelRow" style="display:none; color: red;">
+                        <th>Alasan Batal</th>
+                        <td id="viewReason">-</td>
+                    </tr>
+                </table>
+                
+                <div id="actionButtons" style="margin-top: 20px;">
+                    <button class="btn-secondary" onclick="cancelOrder()">Batalkan Pesanan</button>
+                    <button class="btn-danger" onclick="deleteOrder()" style="margin-left: 10px;">Hapus Data</button>
+                </div>
+
+                <p id="noDataMsg" style="color:red; display:none; margin-top: 20px;">Belum ada pesanan aktif.</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="content-box">
+                <h2>Tentang Nexabyte</h2>
+                <p>Nexabyte adalah platform penyedia solusi digital untuk pengembangan website dan aplikasi mobile.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Hubungi Developer</h2>
+            <div class="dev-container">
+                <div class="dev-card">
+                    <div class="profile-img"><img src="https://ui-avatars.com/api/?name=Dev+Satu" alt="Dev 1"></div>
+                    <h3>Alex Nexa</h3>
+                    <p class="role">Founder & CEO</p>
+                    <p><i class="fas fa-envelope"></i> alex@nexabyte.com</p>
+                </div>
+                <div class="dev-card">
+                    <div class="profile-img"><img src="https://ui-avatars.com/api/?name=Dev+Dua" alt="Dev 2"></div>
+                    <h3>Sarah Byte</h3>
+                    <p class="role">Co-Founder</p>
+                    <p><i class="fas fa-envelope"></i> sarah@nexabyte.com</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
